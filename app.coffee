@@ -16,7 +16,7 @@ app.configure ->
   app.use express.logger('dev')
   
   bundle = browserify(require: [
-    './lib/board'
+    './lib/board_display'
   ])
   try
     fs.mkdirSync __dirname + '/assets/js/build'

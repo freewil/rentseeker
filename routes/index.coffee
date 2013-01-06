@@ -1,4 +1,4 @@
-board = require '../lib/board'
+board = require '../lib/board_display'
 
 module.exports =
   index: (req, res) ->

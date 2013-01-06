@@ -5,7 +5,7 @@
   "main": "app.coffee",
   "scripts": {
     "start": "coffee app.coffee",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "browserify": "~1.17.1"
   },
   "devDependencies": {
-    "node-dev": "~0.2.9"
+    "node-dev": "~0.2.9",
+    "mocha": "~1.7.4"
   }
 }
