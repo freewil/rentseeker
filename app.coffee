@@ -6,6 +6,7 @@ fs = require 'fs'
 
 browserify = require 'browserify'
 assets = require 'connect-assets'
+io = require 'socket.io'
 
 app = express()
 
@@ -48,5 +49,18 @@ app.configure 'development', ->
   
 app.get '/', routes.index
 
-http.createServer(app).listen app.get('port'), ->
+server = http.createServer(app)
+io = io.listen server
+
+server.listen app.get('port'), ->
   console.log 'Express server listening on port ' + app.get('port')
+
+io.sockets.on 'connection', (socket) ->
+  console.log 'connected'
+  
+  setInterval ->
+    socket.emit 'ping'
+  , 5000
+  
+  socket.on 'pong', ->
+    console.log 'pong!'
