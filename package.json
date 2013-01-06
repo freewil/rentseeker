@@ -2,8 +2,9 @@
   "name": "rentseeker",
   "version": "0.0.0",
   "description": "ERROR: No README.md file found!",
-  "main": "app.js",
+  "main": "app.coffee",
   "scripts": {
+    "start": "coffee app.coffee",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,5 +13,13 @@
   },
   "author": "",
   "license": "BSD",
-  "gitHead": "0bde2d4e020a496e10a022fd678b28ecf379549b"
+  "gitHead": "0bde2d4e020a496e10a022fd678b28ecf379549b",
+  "dependencies": {
+    "coffee-script": "~1.4.0",
+    "express": "~3.0.6",
+    "jade": "~0.27.7"
+  },
+  "devDependencies": {
+    "node-dev": "~0.2.9"
+  }
 }
