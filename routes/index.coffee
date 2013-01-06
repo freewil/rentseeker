@@ -1,3 +1,5 @@
+board = require '../lib/board'
+
 module.exports =
   index: (req, res) ->
-    res.render 'index', title: 'rentseeker'
+    res.render 'index', board: board
