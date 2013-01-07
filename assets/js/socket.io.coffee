@@ -9,3 +9,9 @@ socket.on 'connect', ->
   socket.on 'ping', ->
     console.log 'ping?'
     socket.emit 'pong'
+  socket.on 'rolled', (data) ->
+    console.log 'rolled...'
+    console.log data
+
+$('#roll-dice').on 'click', ->
+  socket.emit 'roll'

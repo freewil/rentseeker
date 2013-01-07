@@ -9,19 +9,21 @@ describe 'game', ->
     game = new Game()
     
   it 'should be able to init', ->
-    game.init 2
+    game.players = ['bill', 'joe']
+    game.init()
+    strictEqual game.board.pos.length, 2
     strictEqual game.board.pos[0], 0
     strictEqual game.board.pos[1], 0
     
   it 'should be able to roll', ->
-    game.roll()
+    dice = game.roll()
     
-    strictEqual game.dice.length, 2
+    strictEqual dice.length, 2
     
     # make sure the dice values are integers
-    strictEqual game.dice[0] % 1, 0
-    strictEqual game.dice[1] % 1, 0
+    strictEqual dice[0] % 1, 0
+    strictEqual dice[1] % 1, 0
     
     # make sure each dice value is 1-6
-    ok game.dice[0] >= 1 && game.dice[0] <= 6
-    ok game.dice[1] >= 1 && game.dice[1] <= 6
+    ok dice[0] >= 1 && dice[0] <= 6
+    ok dice[1] >= 1 && dice[1] <= 6

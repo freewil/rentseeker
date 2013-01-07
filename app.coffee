@@ -7,6 +7,7 @@ fs = require 'fs'
 browserify = require 'browserify'
 assets = require 'connect-assets'
 io = require 'socket.io'
+GameManager = require './lib/game_manager'
 
 app = express()
 
@@ -55,8 +56,10 @@ io = io.listen server
 server.listen app.get('port'), ->
   console.log 'Express server listening on port ' + app.get('port')
 
+
 io.sockets.on 'connection', (socket) ->
   console.log 'connected'
+  manager = new GameManager()
   
   setInterval ->
     socket.emit 'ping'
@@ -64,3 +67,6 @@ io.sockets.on 'connection', (socket) ->
   
   socket.on 'pong', ->
     console.log 'pong!'
+    
+  socket.on 'roll', ->
+    socket.emit 'rolled', manager.game.roll()
