@@ -3,7 +3,7 @@ Game = require '../lib/game'
 
 game = null
 
-describe 'game', ->
+describe 'Game', ->
   
   before ->
     game = new Game()

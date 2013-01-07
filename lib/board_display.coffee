@@ -1,4 +1,4 @@
-board = [
+BoardDisplay = [
   {
     name: 'Go'
     desc: 'Collect $200 as you Pass'
@@ -201,4 +201,4 @@ board = [
   }
 ]
 
-module.exports = board
+module.exports = BoardDisplay

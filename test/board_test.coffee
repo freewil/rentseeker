@@ -3,7 +3,7 @@ Board = require '../lib/board'
 
 board = null
 
-describe 'board', ->
+describe 'Board', ->
   
   before ->
     board = new Board()
